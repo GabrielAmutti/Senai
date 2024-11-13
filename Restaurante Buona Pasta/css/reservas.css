@@ -1,0 +1,314 @@
+    @import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+    /*Global styles*/
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --main-font: 'Source Sans Pro', sans-serif;
+        --secondary-font: 'Herr Von Muellerhoff', cursive;
+        --body-font: 'Cabin', sans-serif;
+        --main-font-color-dark: #444444;
+        --secondary-font-color: #e21616;
+        --body-font-color: #515151;
+    }
+
+    html {
+        font-family: var(--body-font);
+        font-size: 10px;
+        color: var(--body-font-color);
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+        background: linear-gradient(to bottom, #d1904e, #F4A460, #f5b16d, #f5b074);
+    }
+
+    section {
+        padding: 3.9rem 0;
+        overflow: hidden;
+    }
+
+    p {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 122.5rem;
+        margin: 0 auto;
+        padding: 0 2.4rem;
+    }
+
+    .sub-headline {
+        font-size: 8.5rem;
+        font-family: var(--secondary-font);
+        color: var(--secondary-font-color);
+        font-weight: 100;
+        line-height: .4;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fadeUp .5s forwards;
+        animation-delay: .5s;
+    }
+
+    .first-letter {
+        text-transform: uppercase;
+        font-size: 10.3rem;
+    }
+
+    .headline {
+        color: #fff;
+        font-size: 3.7rem;
+        font-family: var(--main-font);
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: .5rem;
+        margin-right: -.5rem;
+        animation: scale .5s forwards;
+    }
+
+    .asterisk {
+        font-size: 1.2rem;
+        color: var(--secondary-font-color);
+        margin: 0 1.6rem;
+        opacity: 0;
+        animation: spin .5s forwards;
+        animation-delay: .7s;
+    }
+
+    .global-headline {
+        text-align: center;
+        margin-top: 3.9rem;
+    }
+
+    .global-headline .asterisk {
+        color: var(--body-font-color);
+        margin: 2.4rem 0;
+    }
+
+    .headline-dark {
+        color: var(--main-font-color-dark);
+        letter-spacing: .7rem;
+        margin-right: -.7rem;
+    }
+
+    .body-btn {
+        font-size: 1.5rem;
+        color: var(--secondary-font-color);
+        position: relative;
+        transition: color .5s;
+    }
+
+    .body-btn:hover,
+    .body-btn:focus {
+        color: var(--main-font-color-dark);
+    }
+
+    .body-btn:hover::before,
+    .body-btn:focus::before {
+        background-color: var(--main-font-color-dark);
+    }
+
+    .restaurant-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reservation-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        width: 400px;
+        height: 400px;
+        background-color: var(--main-font-color-dark);
+        opacity: 80%;
+        border-radius: 20px;
+    }
+
+    .reservation-form label {
+        font-size: 1.3rem;
+        color: white;
+        margin-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .reservation-form input {
+        padding: 0.8rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+
+    #name {
+        width: 25rem;
+    }
+
+    #date {
+        width: 12rem;
+        
+    }
+
+    #time {
+        width: 8rem;
+        
+    }
+    #people {
+        width: 5rem;
+    }
+
+    #phone {
+        width: 11rem;
+    }
+
+    .reservation-form button {
+        margin-top: 1.5rem;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        background-color: var(--secondary-font-color);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .reservation-form button:hover {
+        background-color: #a91515;
+    }
+
+    /* Estilos para centralizar o conteúdo da mensagem de confirmação */
+    .confirmation-message {
+        display: none; /* Inicialmente escondido */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 2rem 3rem;
+        border-radius: 10px;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        z-index: 9999; /* Garante que o popup apareça acima de outros elementos */
+        max-width: 500px;
+        width: 100%;
+      }
+
+    .confirmation-message span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #e21616; /* Cor vermelha para destacar */
+    }
+
+    .btn-back {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #e21616;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #a91515;
+    }
+
+
+
+    /* Ajustes de responsividade para telas pequenas */
+    @media screen and (max-width: 768px) {
+        .sub-headline {
+            font-size: 5rem;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+        }
+
+        .reservation-form {
+            width: 90%;
+        }
+
+        .reservation-form input,
+        .reservation-form button {
+            font-size: 1.2rem;
+            padding: 0.8rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        /* Reduzir tamanho da fonte e ajustar layout em telas muito pequenas */
+        p {
+            font-size: 1.6rem;
+        }
+
+        .sub-headline {
+            font-size: 4rem;
+        }
+
+        .headline {
+            font-size: 2rem;
+        }
+
+        .reservation-form input {
+            font-size: 1rem;
+            padding: 0.6rem;
+            max-width: 100%;
+        }
+
+        .reservation-form button {
+            font-size: 1.3rem;
+            padding: 0.8rem;
+            max-width: 100%;
+        }
+    }
+
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+        0% {
+            transform: translateY(4rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(2);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            opacity: 1;
+            transform: rotate(-360deg);
+        }
+    }

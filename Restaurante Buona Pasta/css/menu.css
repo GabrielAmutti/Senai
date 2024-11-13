@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #444444;
+    --secondary-font-color: #e21616;
+    --body-font-color: #515151;
+}
+
+html {
+    font-family: var(--body-font);
+    font-size: 10px;
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #d1904e, #F4A460, #f5b16d, #f5b074);
+}
+
+section {
+    padding: 3.9rem 0;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+.sub-headline {
+    font-size: 8.5rem;
+    font-family: var(--secondary-font);
+    color: var(--secondary-font-color);
+    font-weight: 100;
+    line-height: .4;
+    letter-spacing: 2px;
+    animation: fadeUp .5s forwards;
+    animation-delay: .5s;
+    
+}
+
+.first-letter {
+    text-transform: uppercase;
+    font-size: 10.3rem;
+}
+
+.headline {
+    color: #fff;
+    font-size: 3.7rem;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-right: -.5rem;
+    animation: scale .5s forwards;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 100%;
+    max-width: 8.4rem;
+    height: .25rem;
+    background-color: #fff;
+    position: relative;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: .9s;
+}
+
+.line-right::before,
+.line-left::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: .6rem solid transparent;
+    opacity: 0;
+    animation: grow 1.5s forwards;
+    animation-delay: 1.2s;
+}
+
+.line-right::before {
+    border-right-color: #fff;
+    right: 0;
+}
+
+.line-left::before {
+    border-left-color: #fff;
+    left: 0;
+}
+
+.asterisk {
+    font-size: 1.2rem;
+    color: var(--secondary-font-color);
+    margin: 0 1.6rem;
+    opacity: 0;
+    animation: spin .5s forwards;
+    animation-delay: .7s;
+}
+
+.single-animation {
+    opacity: 0;
+    animation: fadeDown .5s forwards;
+    animation-delay: 1.5s;
+}
+
+.headline-description h5 {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: -2px;
+}
+
+/* Discover our Story */
+
+.global-headline {
+    text-align: center;
+    margin-top: 3.9rem;
+}
+
+.discover-our-story .global-headline {
+    margin-top: 6.9rem;
+}
+
+.global-headline .asterisk {
+    color: var(--body-font-color);
+    margin: 2.4rem 0;
+}
+
+.headline-dark {
+    color: var(--main-font-color-dark);
+    letter-spacing: .7rem;
+    margin-right: -.7rem;
+}
+
+.global-headline .sub-headline {
+    letter-spacing: -1px;
+    line-height: .42;
+}
+
+.restaurant-info {
+    text-align: center;
+}
+
+.restaurant-description {
+    margin-bottom: 3rem;
+}
+
+.restaurant-description p {
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+}
+
+.body-btn {
+    font-size: 2.5rem;
+    color: var(--secondary-font-color);
+    position: relative;
+    transition: color .5s;
+    margin-top: 50px;
+}
+
+.body-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-font-color);
+    transition: background-color .5s;
+}
+
+.body-btn:hover,
+.body-btn:focus {
+    color: var(--main-font-color-dark);
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before {
+    background-color: var(--main-font-color-dark);
+}
+
+/* DISCOVER OUR MENU */
+
+.discover-our-menu .restaurant-description {
+    padding-top: 3rem;
+    margin-bottom: 0;
+} 
+
+
+.perfect-sec {
+    background: url("images/lasanha.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.menu-section {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-gap: 2.4rem;
+    padding: 0 2.4rem;
+    justify-items: center; /* Alinha os itens no centro */
+}
+
+.menu-item {
+    display: inline-block;
+    width: 320px; /* Limita a largura para não exagerar */
+    height: 400px;
+    margin: 10px;
+    margin-bottom: 35px;
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px; /* Ajuste a altura da imagem */
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    transition: transform .3s ease;
+}
+
+.menu-item img:hover {
+    transform: scale(1.03);
+}
+
+.menu-item h1 {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    color: var(--main-font-color-dark);
+    letter-spacing: 1px;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.menu-item .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-font-color);
+    margin-bottom: 50px;
+}
+
+.menu-item .cta-btn {
+    font-size: 1.5rem;
+    padding: .9rem 1.8rem;
+    background-color: var(--secondary-font-color);
+    color: #fff;
+    border-radius: .4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    transition: background-color .3s ease;
+}
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr); /* Em telas maiores, 4 colunas */
+    }
+
+    .menu-item h3 {
+        font-size: 2.4rem;
+    }
+
+    .menu-item p {
+        font-size: 1.4rem;
+        margin: 10px;
+    }
+
+    .menu-item .price {
+        font-size: 2.5rem;
+    }
+
+    .cta-btn {
+        font-size: 1.6rem;
+    }
+}
+
+/* Animations */
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+}
